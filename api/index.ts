@@ -1,7 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import express from 'express';
 import compression from 'compression';
-import { storage } from '../server/storage';
 
 const app = express();
 
@@ -11,7 +10,7 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '2mb' }));
 
 // Security headers
-app.use((req, res, next) => {
+app.use((req: any, res: any, next: any) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('X-Frame-Options', 'DENY');
   res.setHeader('X-XSS-Protection', '1; mode=block');
@@ -19,7 +18,7 @@ app.use((req, res, next) => {
 });
 
 // CORS
-app.use((req, res, next) => {
+app.use((req: any, res: any, next: any) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
@@ -30,41 +29,61 @@ app.use((req, res, next) => {
   next();
 });
 
+// Sample data for testing
+const sampleProducts = [
+  {
+    id: 1,
+    name: "BPC-157",
+    description: "Research peptide for tissue repair studies",
+    price: "89.99",
+    categoryId: 1,
+    imageUrl: "https://via.placeholder.com/300x300",
+    inStock: true,
+    featured: true
+  }
+];
+
+const sampleCategories = [
+  {
+    id: 1,
+    name: "Peptides",
+    slug: "peptides",
+    imageUrl: "https://via.placeholder.com/300x200"
+  }
+];
+
 // API Routes
-app.get('/api/categories', async (req, res) => {
+app.get('/api/categories', async (req: any, res: any) => {
   try {
-    const categories = await storage.getCategories();
-    res.json(categories);
+    res.json(sampleCategories);
   } catch (error) {
     console.error('Error fetching categories:', error);
     res.status(500).json({ error: 'Failed to fetch categories' });
   }
 });
 
-app.get('/api/products', async (req, res) => {
+app.get('/api/products', async (req: any, res: any) => {
   try {
-    const products = await storage.getProducts();
-    res.json(products);
+    res.json(sampleProducts);
   } catch (error) {
     console.error('Error fetching products:', error);
     res.status(500).json({ error: 'Failed to fetch products' });
   }
 });
 
-app.get('/api/products/featured', async (req, res) => {
+app.get('/api/products/featured', async (req: any, res: any) => {
   try {
-    const products = await storage.getFeaturedProducts();
-    res.json(products);
+    res.json(sampleProducts.filter(p => p.featured));
   } catch (error) {
     console.error('Error fetching featured products:', error);
     res.status(500).json({ error: 'Failed to fetch featured products' });
   }
 });
 
-app.get('/api/products/:id', async (req, res) => {
+app.get('/api/products/:id', async (req: any, res: any) => {
   try {
     const productId = parseInt(req.params.id);
-    const product = await storage.getProductById(productId);
+    const product = sampleProducts.find(p => p.id === productId);
     
     if (!product) {
       return res.status(404).json({ error: 'Product not found' });
@@ -77,7 +96,7 @@ app.get('/api/products/:id', async (req, res) => {
   }
 });
 
-app.get('/api/cart', (req, res) => {
+app.get('/api/cart', (req: any, res: any) => {
   res.json({
     items: [],
     itemCount: 0,
@@ -85,7 +104,7 @@ app.get('/api/cart', (req, res) => {
   });
 });
 
-app.get('/api/health', (req, res) => {
+app.get('/api/health', (req: any, res: any) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
