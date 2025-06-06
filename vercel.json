@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "buildCommand": "npx esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist && mkdir -p dist/public",
-  "outputDirectory": "dist",
-  "functions": {
-    "server/index.ts": {
-      "maxDuration": 30
+  "builds": [
+    {
+      "src": "server/index.ts",
+      "use": "@vercel/node"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
@@ -14,7 +13,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/dist/public/$1"
+      "dest": "/server/index.ts"
     }
   ]
 }
