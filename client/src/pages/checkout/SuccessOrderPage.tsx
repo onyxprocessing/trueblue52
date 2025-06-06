@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'wouter';
 import { useCart } from '../../hooks/useCart';
 import Layout from '../../components/Layout';
@@ -138,7 +138,7 @@ export default function SuccessOrderPage() {
                 </div>
                 
                 {fullName && fullAddress && (
-                  <>
+                  <React.Fragment>
                     <div className="border-t border-gray-200 my-2 pt-2">
                       <h3 className="font-medium mb-2">Shipping Information</h3>
                       <div className="space-y-1">
@@ -174,7 +174,7 @@ export default function SuccessOrderPage() {
                         )}
                       </div>
                     </div>
-                  </>
+                  </React.Fragment>
                 )}
               </div>
             </div>

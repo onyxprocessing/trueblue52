@@ -443,7 +443,7 @@ function ProductPage() {
   // No need to redefine getCurrentPrice, use the one we already defined
 
   return (
-    <>
+    <React.Fragment>
       {/* Add dedicated SEO meta tags for this product */}
       <ProductSEO product={product} />
       
@@ -693,7 +693,7 @@ function ProductPage() {
           </div>
         </div>
       </Layout>
-    </>
+    </React.Fragment>
   );
 }
 
