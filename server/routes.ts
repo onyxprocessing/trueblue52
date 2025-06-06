@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertCartItemSchema, Product } from "@shared/schema";
 import { z } from "zod";
-import * as expressSession from 'express-session';
+import expressSession from 'express-session';
 import MemoryStore from 'memorystore';
 import fetch from 'node-fetch';
 import path from 'path';
@@ -80,7 +80,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // No Stripe initialization - using direct payment methods instead
   // Set up session middleware for cart management
   const MemoryStoreSession = MemoryStore(expressSession);
-  app.use(expressSession.default({
+  app.use(expressSession({
     secret: 'trueaminos-secret-key',
     resave: false,
     saveUninitialized: true,
@@ -116,9 +116,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Image proxy and optimization endpoint
   app.get("/api/image-proxy", async (req: Request, res: Response) => {
-    // Forward to the image optimizer service
-    const { optimizeAndServeImage } = await import('./image-optimizer');
-    await optimizeAndServeImage(req, res);
+    try {
+      // Forward to the image optimizer service
+      const { optimizeAndServeImage } = await import('./image-optimizer');
+      await optimizeAndServeImage(req, res);
+    } catch (error) {
+      console.error('Image proxy error:', error);
+      res.status(500).json({ error: 'Image processing failed' });
+    }
   });
 
   // API Routes - all prefixed with /api

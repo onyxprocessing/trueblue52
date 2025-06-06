@@ -1,0 +1,47 @@
+Errors (51)
+
+Warnings (4)
+Find in logs
+CtrlF
+Running build in Washington, D.C., USA (East) – iad1
+Build machine configuration: 2 cores, 8 GB
+Cloning github.com/onyxprocessing/trueblue52 (Branch: main, Commit: 1fa5915)
+Previous build caches not available
+Cloning completed: 1.172s
+Running "vercel build"
+Vercel CLI 42.2.0
+WARN! Due to `builds` existing in your configuration file, the Build and Development Settings defined in your Project Settings will not apply. Learn More: https://vercel.link/unused-build-settings
+Installing dependencies...
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+added 713 packages in 12s
+87 packages are looking for funding
+  run `npm fund` for details
+Using TypeScript 5.6.3 (local user-provided)
+server/index.ts(2,25): error TS7016: Could not find a declaration file for module 'compression'. '/vercel/path0/node_modules/compression/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/compression` if it exists or add a new declaration (.d.ts) file containing `declare module 'compression';`
+server/routes.ts(83,26): error TS2339: Property 'default' does not exist on type 'typeof import("/vercel/path0/express-session")'.
+server/routes.ts(118,31): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(req: Request, res: Response) => Promise<void>' is not assignable to parameter of type 'Application<Record<string, any>>'.
+      Type '(req: Request, res: Response<any, Record<string, any>>) => Promise<void>' is missing the following properties from type 'Application<Record<string, any>>': init, defaultConfiguration, engine, set, and 63 more.
+server/routes.ts(127,30): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(_req: Request, res: Response) => Promise<void>' is not assignable to parameter of type 'Application<Record<string, any>>'.
+      Type '(_req: Request, res: Response<any, Record<string, any>>) => Promise<void>' is missing the following properties from type 'Application<Record<string, any>>': init, defaultConfiguration, engine, set, and 63 more.
+server/routes.ts(137,36): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>' is not assignable to parameter of type 'Application<Record<string, any>>'.
+      Type '(req: Request, res: Response<any, Record<string, any>>) => Promise<Response<any, Record<string, any>> | undefined>' is missing the following properties from type 'Application<Record<string, any>>': init, defaultConfiguration, engine, set, and 63 more.
+server/routes.ts(153,28): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(_req: Request, res: Response) => Promise<void>' is not assignable to parameter of type 'Application<Record<string, any>>'.
+      Type '(_req: Request, res: Response<any, Record<string, any>>) => Promise<void>' is missing the following properties from type 'Application<Record<string, any>>': init, defaultConfiguration, engine, set, and 63 more.
+server/routes.ts(163,37): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(_req: Request, res: Response) => Promise<void>' is not assignable to parameter of type 'Application<Record<string, any>>'.
+      Type '(_req: Request, res: Response<any, Record<string, any>>) => Promise<void>' is missing the following properties from type 'Application<Record<string, any>>': init, defaultConfiguration, engine, set, and 63 more.
+server/routes.ts(173,49): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>' is not assignable to parameter of type 'Application<Record<string, any>>'.
