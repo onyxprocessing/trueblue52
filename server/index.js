@@ -120,7 +120,7 @@ app.get('/api/cart', (req, res) => {
 
 // Catch all for SPA
 app.get('*', (req, res) => {
-  res.sendFile(join(__dirname, '../client/index.html'));
+  res.sendFile(join(__dirname, '../client/dist/index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
