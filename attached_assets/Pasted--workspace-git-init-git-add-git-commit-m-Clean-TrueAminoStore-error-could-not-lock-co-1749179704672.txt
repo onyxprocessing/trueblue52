@@ -1,0 +1,51 @@
+~/workspace$ git init && git add . && git commit -m "Clean TrueAminoStore"
+error: could not lock config file /home/runner/workspace/.git/config: File exists
+fatal: could not set 'core.repositoryformatversion' to '0'
+~/workspace$ git remote add origin https://github.com/onyxprocessing/trueblue52.git
+git branch -M main
+git push -u origin main
+error: remote origin already exists.
+error: could not lock config file .git/config
+fatal: branch is renamed, but update of config-file failed
+Enumerating objects: 3037, done.
+Counting objects: 100% (3037/3037), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2943/2943), done.
+Writing objects: 100% (3037/3037), 27.91 MiB | 5.61 MiB/s, done.
+Total 3037 (delta 2126), reused 125 (delta 6), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2126/2126), done.
+remote: error: GH013: Repository rule violations found for refs/heads/main.
+remote: 
+remote: - GITHUB PUSH PROTECTION
+remote:   —————————————————————————————————————————
+remote:     Resolve the following violations before pushing again
+remote: 
+remote:     - Push cannot contain secrets
+remote: 
+remote:     
+remote:      (?) Learn how to resolve a blocked push
+remote:      https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push
+remote:     
+remote:     
+remote:       —— Stripe Test API Secret Key ————————————————————————
+remote:        locations:
+remote:          - commit: b0c5addd2c8fd51d6f6aa6528b3db9c7486b6725
+remote:            path: attached_assets/Pasted-Server-side-This-integration-requires-endpoints-on-your-server-that-talk-to-the-Stripe-API-Use-the-1746227992920.txt:109
+remote:          - commit: b0c5addd2c8fd51d6f6aa6528b3db9c7486b6725
+remote:            path: attached_assets/Pasted-Server-side-This-integration-requires-endpoints-on-your-server-that-talk-to-the-Stripe-API-Use-the-1746227992920.txt:114
+remote:          - commit: 49aeaff164c0a6c5a83b918f7edc548d7d378c37
+remote:            path: attached_assets/Pasted-Set-up-Stripe-Server-side-Client-side-Server-side-This-integration-requires-endpoints-on-your-se-1746238053757.txt:112
+remote:          - commit: 49aeaff164c0a6c5a83b918f7edc548d7d378c37
+remote:            path: attached_assets/Pasted-Set-up-Stripe-Server-side-Client-side-Server-side-This-integration-requires-endpoints-on-your-se-1746238053757.txt:117
+remote:          - commit: 49aeaff164c0a6c5a83b918f7edc548d7d378c37
+remote:            path: attached_assets/Pasted-Set-up-Stripe-Server-side-Client-side-Server-side-This-integration-requires-endpoints-on-your-se-1746238053757.txt:124
+remote:     
+remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.
+remote:        https://github.com/onyxprocessing/trueblue52/security/secret-scanning/unblock-secret/2y7J0ZdET497wW3sPkskvMkB8Wj
+remote:     
+remote: 
+remote: 
+To https://github.com/onyxprocessing/trueblue52.git
+ ! [remote rejected]   main -> main (push declined due to repository rule violations)
+error: failed to push some refs to 'https://github.com/onyxprocessing/trueblue52.git'
+~/workspace$ 
