@@ -15,6 +15,12 @@
     "analyze": "vite build --mode analyze"
   },
   "dependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/plugin-transform-react-constant-elements": "^7.27.1",
+    "@babel/plugin-transform-react-inline-elements": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
     "@hookform/resolvers": "^3.10.0",
     "@jridgewell/trace-mapping": "^0.3.25",
     "@neondatabase/serverless": "^0.10.4",
@@ -51,6 +57,7 @@
     "@tanstack/react-query": "^5.60.5",
     "airtable": "^0.12.2",
     "axios": "^1.9.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
