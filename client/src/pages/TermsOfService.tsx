@@ -4,7 +4,7 @@ import PageMeta from '@/components/PageMeta'
 
 export default function TermsOfServicePage() {
   return (
-    <>
+    <React.Fragment>
       <PageMeta
         title="Terms of Service | TrueAminos"
         description="Terms of Service for TrueAminos. Read about our terms, conditions, and guidelines for using our website and purchasing our products."
@@ -120,6 +120,6 @@ export default function TermsOfServicePage() {
           </div>
         </div>
       </Layout>
-    </>
+    </React.Fragment>
   );
 }

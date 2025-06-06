@@ -4,7 +4,7 @@ import PageMeta from '@/components/PageMeta'
 
 export default function PrivacyPolicyPage() {
   return (
-    <>
+    <React.Fragment>
       <PageMeta
         title="Privacy Policy | TrueAminos"
         description="Privacy Policy for TrueAminos. Learn how we collect, use, and protect your information on trueaminos.com."
@@ -116,6 +116,6 @@ export default function PrivacyPolicyPage() {
           </div>
         </div>
       </Layout>
-    </>
+    </React.Fragment>
   );
 }

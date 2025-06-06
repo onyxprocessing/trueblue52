@@ -4,7 +4,7 @@ import PageMeta from '@/components/PageMeta'
 
 export default function ReturnPolicyPage() {
   return (
-    <>
+    <React.Fragment>
       <PageMeta
         title="Return Policy | TrueAminos"
         description="Return and refund information for TrueAminos products. Learn about our return process, eligible items, and refund timeframes."
@@ -156,6 +156,6 @@ export default function ReturnPolicyPage() {
           </div>
         </div>
       </Layout>
-    </>
+    </React.Fragment>
   );
 }
