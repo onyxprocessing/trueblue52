@@ -165,9 +165,12 @@ app.get('*', (req, res) => {
 });
 
 // Error handling
-app.use((error: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((error: any, req: any, res: any, next: any) => {
   console.error('Server error:', error);
   res.status(500).json({ error: 'Internal server error' });
 });
 
-export default app;
+// Export as Vercel serverless function
+export default function handler(req: any, res: any) {
+  return app(req, res);
+}
