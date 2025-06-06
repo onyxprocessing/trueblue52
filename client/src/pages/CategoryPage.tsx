@@ -46,10 +46,10 @@ const CategoryPage: React.FC = () => {
             </h1>
             <p className="text-gray-600 max-w-2xl mx-auto">
               {loadingCategory ? (
-                <>
+                <React.Fragment>
                   <div className="h-4 bg-gray-200 animate-pulse rounded mb-2 w-full max-w-2xl mx-auto" />
                   <div className="h-4 bg-gray-200 animate-pulse rounded w-2/3 max-w-xl mx-auto" />
-                </>
+                </React.Fragment>
               ) : (
                 getCategoryDescription(slug)
               )}
