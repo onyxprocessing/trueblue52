@@ -76,7 +76,7 @@ const Layout: React.FC<LayoutProps> = ({
       {mobileMenuOpen && (
         <MobileMenu isOpen={mobileMenuOpen} onClose={toggleMobileMenu} />
       )}
-    </>
+    </React.Fragment>
   )
 }
 

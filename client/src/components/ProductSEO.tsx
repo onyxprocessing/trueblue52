@@ -28,7 +28,7 @@ export default function ProductSEO({ product }: ProductSEOProps) {
   const productPrice = product.price5mg || product.price || '0';
   
   return (
-    React.Fragment>
+    <React.Fragment>
       <Helmet>
         {/* Primary Meta Tags */}
         <title>{title}</title>
@@ -66,6 +66,6 @@ export default function ProductSEO({ product }: ProductSEOProps) {
           slug: product.slug
         }} 
       />
-    </>
+    </React.Fragment>
   );
 }

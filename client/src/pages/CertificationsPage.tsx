@@ -97,7 +97,7 @@ const CertificationsPage: React.FC = () => {
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
           </div>
         ) : (
-          React.Fragment>
+          <React.Fragment>
             {filteredProducts.length === 0 ? (
               <div className="text-center py-12">
                 <h3 className="text-xl font-medium text-gray-700 mb-2">No products found</h3>
@@ -189,7 +189,7 @@ const CertificationsPage: React.FC = () => {
                 ))}
               </div>
             )}
-          </>
+          </React.Fragment>
         )}
         
         {/* Educational content about COAs */}
