@@ -588,7 +588,7 @@ const MultiStepCheckout: React.FC = () => {
       {cart.items.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (
-        <>
+        <React.Fragment>
           <ul className="divide-y divide-gray-200">
             {cart.items.map((item) => (
               <li key={`${item.id}-${item.selectedWeight || 'default'}`} className="py-3">
@@ -674,7 +674,7 @@ const MultiStepCheckout: React.FC = () => {
               <p>${calculateTotal().toFixed(2)}</p>
             </div>
           </div>
-        </>
+        </React.Fragment>
       )}
     </div>
   );

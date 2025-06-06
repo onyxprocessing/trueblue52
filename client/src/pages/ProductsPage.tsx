@@ -301,7 +301,7 @@ const ProductsPage: React.FC = () => {
                     ))}
                   </div>
                 ) : sortedProducts.length > 0 ? (
-                  <>
+                  <React.Fragment>
                     <p className="text-sm text-gray-500 mb-4">
                       Showing {sortedProducts.length} of {products.length} {products.length === 1 ? 'product' : 'products'}
                     </p>
@@ -310,7 +310,7 @@ const ProductsPage: React.FC = () => {
                         <ProductCard key={product.id} product={product} />
                       ))}
                     </div>
-                  </>
+                  </React.Fragment>
                 ) : (
                   <div className="bg-white rounded-lg shadow-sm p-8 text-center">
                     <h3 className="text-lg font-medium text-gray-900 mb-2">No products found</h3>
