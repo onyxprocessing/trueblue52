@@ -4,7 +4,7 @@ import PageMeta from '@/components/PageMeta'
 
 export default function ShippingPolicyPage() {
   return (
-    <>
+    <React.Fragment>
       <PageMeta
         title="Shipping Policy | TrueAminos"
         description="Shipping information for TrueAminos orders. Learn about our shipping methods, delivery times, costs, and international shipping policies."
@@ -154,6 +154,6 @@ export default function ShippingPolicyPage() {
           </div>
         </div>
       </Layout>
-    </>
+    </React.Fragment>
   );
 }

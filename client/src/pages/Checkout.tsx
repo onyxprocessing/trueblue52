@@ -681,7 +681,7 @@ const Checkout: React.FC = () => {
                   
                   {/* Discount calculation */}
                   {discountInfo.isValid && discountInfo.discount > 0 && (
-                    <>
+                    React.Fragment>
                       <div className="flex justify-between mb-2">
                         <span>Subtotal</span>
                         <span>{formatPrice(subtotal)}</span>

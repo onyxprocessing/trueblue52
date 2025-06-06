@@ -36,7 +36,7 @@ const Layout: React.FC<LayoutProps> = ({
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen)
   
   return (
-    <>
+    <React.Fragment>
       {/* Enhanced SEO meta tags */}
       <PageMeta
         title={title}
