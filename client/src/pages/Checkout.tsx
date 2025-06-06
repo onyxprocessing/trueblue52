@@ -696,7 +696,7 @@ const Checkout: React.FC = () => {
                           <span>{formatPrice(10)}</span>
                         </div>
                       )}
-                    </>
+                    </React.Fragment>
                   )}
 
                   <div className="flex justify-between text-lg font-bold">

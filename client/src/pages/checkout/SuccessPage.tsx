@@ -261,7 +261,7 @@ const SuccessPage = () => {
                             )}
                           </div>
                         </div>
-                      </>
+                      </React.Fragment>
                     )}
                     
                     <div className="text-xs text-gray-500 mt-3 border-t border-gray-200 pt-2">
@@ -295,7 +295,7 @@ const SuccessPage = () => {
                   Contact Support
                 </Button>
               </div>
-            </>
+            </React.Fragment>
           )}
 
           {paymentStatus === 'processing' && (
